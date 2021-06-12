@@ -172,23 +172,9 @@ public class CartActivity extends AppCompatActivity {
                         btnNext.setVisibility(View.GONE);
 
                         Toast.makeText(CartActivity.this, "Cảm ơn!", Toast.LENGTH_SHORT).show();
-//                        DatabaseReference cartDeleteRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
-//
-//                        FirebaseRecyclerOptions<Cart> options = new FirebaseRecyclerOptions.Builder<Cart>()
-//                                .setQuery(cartDeleteRef.child("User Cart").child(Prevalent.currentOnlineUser.getPhone())
-//                                        .child("Products"), Cart.class).build();
-//
-//                        FirebaseRecyclerAdapter<Cart, CartViewHolder> adapter =
-//                                new FirebaseRecyclerAdapter<Cart, CartViewHolder>(options) {
-//                                    @Override
-//                                    protected void onBindViewHolder(@NonNull CartViewHolder cartViewHolder, int i, @NonNull Cart cart) {
-//
-//                                    }
-//                                };
                     }
                     else if (shipStatus.equals("Chưa được giao")) {
                         txtTotalPrice.setText("Đơn của " + userName + " chưa được giao");
-//                        txtTotalPrice.setVisibility(View.GONE);
                         relativeLayout.setVisibility(View.VISIBLE);
                         recyclerCart.setVisibility(View.VISIBLE);
                         txtMessage.setVisibility(View.VISIBLE);
@@ -206,44 +192,7 @@ public class CartActivity extends AppCompatActivity {
                                 startActivity(intent);
                             }
                         });
-
-//
                         Toast.makeText(CartActivity.this, "Bạn có thể mua thêm khi đơn hàng được xác minh", Toast.LENGTH_SHORT).show();
-//                        FirebaseRecyclerOptions<AdminOrders> options =
-//                                new FirebaseRecyclerOptions.Builder<AdminOrders>()
-//                                        .setQuery(orderRef.child(Prevalent.currentOnlineUser.getPhone()), AdminOrders.class).build();
-//
-//                        FirebaseRecyclerAdapter<AdminOrders, BillViewHolder> adapter =
-//                                new FirebaseRecyclerAdapter<AdminOrders, BillViewHolder>(options) {
-//                                    @Override
-//                                    protected void onBindViewHolder(@NonNull BillViewHolder adminOrdersViewHolder, int i, @NonNull AdminOrders adminOrders) {
-//                                        adminOrdersViewHolder.txtOrderUserName.setText("Tên: " + adminOrders.getName());
-//                                        adminOrdersViewHolder.txtOrderPhoneNum.setText("Số: " + adminOrders.getPhone());
-//                                        adminOrdersViewHolder.txtOrderTotalPrice.setText("Tổng tiền: " + adminOrders.getTotalPrice() + " VND");
-//                                        adminOrdersViewHolder.txtOrderAddress.setText("Địa chỉ: " + adminOrders.getAddress() + ", " + adminOrders.getCity());
-//                                        adminOrdersViewHolder.txtOrderDateTime.setText("Thời gian: " + adminOrders.getDate() + ", " + adminOrders.getTime());
-//
-//                                        adminOrdersViewHolder.btnShowProducts.setOnClickListener(new View.OnClickListener() {
-//                                            @Override
-//                                            public void onClick(View v) {
-//                                                String userId = getRef(i).getKey();
-//
-//                                                Intent intent = new Intent(CartActivity.this, AdminCheckProductsActivity.class);
-//                                                intent.putExtra("userID", userId);
-//                                                startActivity(intent);
-//                                            }
-//                                        });
-//                                    }
-//
-//                                    @NonNull
-//                                    @Override
-//                                    public BillViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//                                        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.orders_item, parent, false);
-//                                        return new BillViewHolder(view);
-//                                    }
-//                                };
-//                        recyclerCart.setAdapter(adapter);
-//                        adapter.startListening();
                     }
                 }
             }
@@ -268,19 +217,4 @@ public class CartActivity extends AppCompatActivity {
         txtBillTotalPrice = findViewById(R.id.txtBillTotalPrice);
         btnShowProducts = findViewById(R.id.btnShowBillProducts);
     }
-
-//    public static class UserOrdersViewHolder extends RecyclerView.ViewHolder {
-//        public TextView txtOrderUserName, txtOrderPhoneNum, txtOrderTotalPrice, txtOrderAddress, txtOrderDateTime;
-//        public Button btnShowProducts;
-//
-//        public UserOrdersViewHolder(@NonNull View itemView) {
-//            super(itemView);
-//            txtOrderUserName = itemView.findViewById(R.id.txtOrderUserName);
-//            txtOrderPhoneNum = itemView.findViewById(R.id.txtOrderPhoneNum);
-//            txtOrderTotalPrice = itemView.findViewById(R.id.txtOrderTotalPrice);
-//            txtOrderAddress = itemView.findViewById(R.id.txtOrderAddress);
-//            txtOrderDateTime = itemView.findViewById(R.id.txtOrderDateTime);
-//            btnShowProducts = itemView.findViewById(R.id.btnShowProducts);
-//        }
-//    }
 }
