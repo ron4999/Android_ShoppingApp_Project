@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText edtLoginPhoneNum, edtLoginPassword;
     private Button btnLogin;
     private ProgressDialog loadingBar;
-    private TextView txtAdminLogin, txtNotAdminLogin; // đăng nhập admin
+    private TextView txtAdminLogin, txtNotAdminLogin; 
 
     private String parendDB = "Users";
 
@@ -39,12 +39,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // ánh xạ đến view
         initView();
 
         Paper.init(this);
 
-        // thêm hành động cho nút đăng nhập
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,7 +50,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        //Thêm hành động cho textview Đăng nhập Admin
         txtAdminLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,7 +60,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        //Thêm hành động cho textview Không phải Admin
         txtNotAdminLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,7 +71,6 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    // hàm đăng nhập
     private void loginUser() {
         String phone = edtLoginPhoneNum.getText().toString();
         String password = edtLoginPassword.getText().toString();
@@ -86,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
         else if (TextUtils.isEmpty(password)) {
             Toast.makeText(this, "Vui lòng nhập mật khẩu", Toast.LENGTH_SHORT).show();
         }
-        else { // hiện ra loadingBar
+        else {
             loadingBar.setTitle("Đăng nhập tài khoản");
             loadingBar.setMessage("Đang kiểm tra thông tin, vui lòng chờ");
             loadingBar.setCanceledOnTouchOutside(false);
@@ -96,7 +91,6 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    // kiểm tra đăng nhập
     private void allowAccessToAccount(String phone, String password) {
         if (ckb_remember.isChecked()) {
             Paper.book().write(Prevalent.UserPhoneKey, phone);
@@ -112,8 +106,6 @@ public class LoginActivity extends AppCompatActivity {
                 // nếu sđt có tồn tại
                 if (snapshot.child(parendDB).child(phone).exists()) {
                     Users usersData = snapshot.child(parendDB).child(phone).getValue(Users.class);
-
-                    // kiểm tra số điện thoại và mật khẩu có giống trong db không
                     if (usersData.getPhone().equals(phone)) {
                         if (usersData.getPassword().equals(password)) {
                             if (parendDB.equals("Admins")) {
@@ -128,7 +120,6 @@ public class LoginActivity extends AppCompatActivity {
                                 loadingBar.dismiss();
 
                                 Intent intent = new Intent(LoginActivity.this, HomePageActivity.class);
-                                //lưu trạng thái đang online của user
                                 Prevalent.currentOnlineUser = usersData;
                                 startActivity(intent);
                             }
