@@ -33,10 +33,8 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        // ánh xạ đến giao diện
         initView();
 
-        // thêm hành động cho nút đăng ký
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +43,6 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-    // hàm tạo tài khoản
     private void createAccount() {
         String name = edtRegisterName.getText().toString();
         String phone = edtRegisterPhoneNum.getText().toString();
@@ -60,7 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
         else if (TextUtils.isEmpty(password)) {
             Toast.makeText(this, "Vui lòng nhập mật khẩu", Toast.LENGTH_SHORT).show();
         }
-        else { // hiện ra loadingBar
+        else { 
             loadingBar.setTitle("Tạo tài khoản");
             loadingBar.setMessage("Đang kiểm tra thông tin, vui lòng chờ!");
             loadingBar.setCanceledOnTouchOutside(false);
@@ -70,7 +67,6 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    // Kiểm tra thông tin số điện thoại
     private void validatePhoneNumber(String name, String phone, String password) {
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
@@ -78,7 +74,7 @@ public class RegisterActivity extends AppCompatActivity {
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (!(snapshot.child("Users").child(phone).exists())) { // nếu số điện thoại không tồn tại
+                if (!(snapshot.child("Users").child(phone).exists())) { 
                     HashMap<String , Object> userDataMap = new HashMap<>();
                     userDataMap.put("phone", phone);
                     userDataMap.put("password", password);
@@ -102,7 +98,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 }
                             });
                 }
-                else { // nếu số điện thoại tồn tại hiện ra thông báo
+                else { 
                     Toast.makeText(RegisterActivity.this, "Số " + phone + " đã tồn tại.", Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
                     Toast.makeText(RegisterActivity.this, "Vui lòng thử số điện thoại khác!", Toast.LENGTH_SHORT).show();
