@@ -91,13 +91,11 @@ public class HomePageActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        // Sửa tên và ảnh cho User trên header
         View headerView = navigationView.getHeaderView(0);
         TextView txtUserName = headerView.findViewById(R.id.txtUserName);
         CircleImageView civUserProfile = headerView.findViewById(R.id.civUserProfile);
 
         if (!type.equals("Admin")) {
-            // lấy tên User
             DatabaseReference userRef;
             userRef = FirebaseDatabase.getInstance().getReference().child("Users").child(Prevalent.currentOnlineUser.getPhone());
             userRef.addValueEventListener(new ValueEventListener() {
@@ -112,8 +110,6 @@ public class HomePageActivity extends AppCompatActivity
                             txtUserName.setText(snapshot.child("name").getValue().toString());
                         }
                     }
-//                    txtUserName.setText(snapshot.child("name").getValue().toString());
-//                    Picasso.get().load(snapshot.child("image").getValue().toString()).into(civUserProfile);
                 }
 
                 @Override
@@ -122,8 +118,6 @@ public class HomePageActivity extends AppCompatActivity
                 }
             });
 //            txtUserName.setText(Prevalent.currentOnlineUser.getName());
-//
-//            // lấy hình ảnh upload lên
 //            Picasso.get().load(Prevalent.currentOnlineUser.getImage()).placeholder(R.drawable.user_img).into(civUserProfile);
         }
         if (type.equals("Admin")) {
@@ -219,9 +213,6 @@ public class HomePageActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
         return super.onOptionsItemSelected(item);
     }
 
