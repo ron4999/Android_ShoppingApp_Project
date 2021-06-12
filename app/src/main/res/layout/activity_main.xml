@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background2"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/app_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        app:srcCompat="@drawable/shop_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"/>
+
+    <TextView
+        android:id="@+id/app_slogan"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/app_logo"
+        android:layout_marginTop="10dp"
+        android:text="Tạp hóa ông Long          Đặt mua là xong"
+        android:fontFamily="serif"
+        android:textAlignment="center"
+        android:textColor="@color/purple_500"
+        android:textSize="25dp"
+        android:textStyle="bold|italic"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnLoginMain"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/buttons"
+        android:padding="20dp"
+        android:textAllCaps="false"
+        android:textSize="18dp"
+        android:text="Đã có tài khoản? Đăng nhập"
+        android:fontFamily="serif"
+        android:textColor="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnJoin"
+        android:layout_above="@+id/btnLoginMain"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/input_design"
+        android:padding="20dp"
+        android:textAllCaps="false"
+        android:textSize="18dp"
+        android:text="Đăng ký ngay"
+        android:fontFamily="serif"
+        android:textColor="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    app:cardElevation="15dp"
+    tools:context=".AdminEditDeleteActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgProduct"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"/>
+
+        <EditText
+            android:id="@+id/edtName"
+            android:layout_below="@id/imgProduct"
+            android:hint="Tên sản phẩm"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:background="@drawable/input_design"
+            android:padding="15dp"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <EditText
+            android:id="@+id/edtPrice"
+            android:layout_below="@id/edtName"
+            android:hint="Giá sản phẩm"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:background="@drawable/input_design"
+            android:padding="15dp"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edtDescription"
+            android:layout_below="@id/edtPrice"
+            android:hint="Mô tả sản phẩm"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:background="@drawable/input_design"
+            android:padding="15dp"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnEdit"
+            android:layout_below="@id/edtDescription"
+            android:text="Sửa"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textAllCaps="false"
+            android:background="@drawable/buttons"
+            android:padding="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_below="@id/btnEdit"
+            android:text="Xóa"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textAllCaps="false"
+            android:background="@drawable/buttons"
+            android:padding="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

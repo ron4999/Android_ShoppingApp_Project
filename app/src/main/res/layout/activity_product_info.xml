@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background2"
+    tools:context=".ProductInfoActivity">
+
+    <ImageView
+        android:id="@+id/imgProductInfo"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"/>
+
+    <TextView
+        android:id="@+id/txtProductIName"
+        android:text="Tên sản phẩm"
+        android:textColor="@color/purple_500"
+        android:layout_below="@id/imgProductInfo"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/txtProductIDes"
+        android:text="Mô tả sản phẩm"
+        android:textColor="@color/purple_500"
+        android:layout_below="@id/txtProductIName"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/txtProductIPrice"
+        android:text="Giá sản phẩm"
+        android:textColor="@color/purple_500"
+        android:layout_below="@id/txtProductIDes"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/txt"
+        android:text="Chọn số lượng"
+        android:textColor="@color/purple_500"
+        android:layout_below="@id/txtProductIPrice"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+        android:id="@+id/btnQuantity"
+        android:elevation="6dp"
+        app:textSize="16dp"
+        android:background="@color/purple_200"
+        app:initialNumber="1"
+        app:finalNumber="15"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/txt"
+        android:layout_marginTop="10dp"
+        android:layout_width="250dp"
+        android:layout_height="70dp">
+
+    </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/fabAddToCart"-->
+<!--        android:elevation="6dp"-->
+<!--        android:backgroundTint="@android:color/white"-->
+<!--        android:src="@drawable/ic_cart"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:layout_margin="15dp"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"/>-->
+
+    <Button
+        android:id="@+id/btnAddToCart"
+        android:layout_margin="15dp"
+        android:layout_alignParentBottom="true"
+        android:text="Thêm sản phẩm"
+        android:background="@drawable/buttons"
+        android:textAllCaps="false"
+        android:textColor="#FFF"
+        android:textSize="20dp"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

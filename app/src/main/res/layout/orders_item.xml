@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:background="@color/purple_500"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtOrderUserName"
+            android:text="Tên"
+            android:textSize="20dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="#FFF"
+            android:textStyle="bold"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtOrderPhoneNum"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="5dp"
+            android:text="Số điện thoại"
+            android:textAlignment="viewEnd"
+            android:textColor="#FFF"
+            android:textSize="20dp"
+            android:layout_marginRight="5dp"
+            android:textStyle="bold"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtOrderTotalPrice"
+            android:text="Giá đơn hàng"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#FFF"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:layout_below="@id/txtOrderPhoneNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtOrderAddress"
+            android:text="Địa chỉ"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#FFF"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_below="@id/txtOrderTotalPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtOrderDateTime"
+            android:text="Ngày, giờ"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#FFF"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_below="@id/txtOrderAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnShowProducts"
+            android:layout_below="@+id/txtOrderDateTime"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Hiển thị sản phẩm"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:background="@drawable/buttons"
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

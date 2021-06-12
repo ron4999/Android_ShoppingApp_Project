@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background2"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/login_logo"
+        app:srcCompat="@drawable/shop_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:layout_width="300dp"
+        android:layout_height="150dp" />
+
+    <EditText
+        android:id="@+id/edtLoginPhoneNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_logo"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/input_design"
+        android:fontFamily="serif"
+        android:hint="Nhập số điện thoại"
+        android:inputType="number"
+        android:padding="20dp"
+        android:textColor="@color/purple_500"
+        android:textColorHint="@color/purple_500"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/edtLoginPassword"
+        android:layout_below="@id/edtLoginPhoneNum"
+        android:background="@drawable/input_design"
+        android:padding="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="serif"
+        android:hint="Nhập mật khẩu"
+        android:inputType="textPassword"
+        android:textColor="@color/purple_500"
+        android:textColorHint="@color/purple_500"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:orientation="horizontal"
+        android:layout_below="@id/edtLoginPassword"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.rey.material.widget.CheckBox
+            android:id="@+id/ckb_remember"
+            style="@style/Material.Drawable.CheckBox"
+            android:text="Nhớ tài khoản"
+            android:textColor="@color/purple_200"
+            android:gravity="center_vertical"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:layout_marginLeft="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+<!--        <TextView-->
+<!--            android:id="@+id/txtForgetPass"-->
+<!--            android:text="Quên mật khẩu?"-->
+<!--            android:textColor="#F50057"-->
+<!--            android:textSize="15dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginLeft="120dp"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_below="@id/linear1"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/buttons"
+        android:padding="20dp"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:text="Đăng nhập"
+        android:fontFamily="serif"
+        android:textColor="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtAdminLogin"
+        android:text="Đăng nhập Admin"
+        android:fontFamily="serif"
+        android:layout_below="@id/btnLogin"
+        android:layout_marginTop="160dp"
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/purple_200"
+        android:textSize="15dp"
+        android:textStyle="italic"
+        android:layout_marginLeft="120dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/txtNotAdminLogin"
+        android:text="Không phải Admin"
+        android:fontFamily="serif"
+        android:layout_below="@id/btnLogin"
+        android:layout_marginTop="160dp"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/purple_200"
+        android:textSize="15dp"
+        android:textStyle="italic"
+        android:layout_marginLeft="10dp"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

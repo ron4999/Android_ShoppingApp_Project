@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background2"
+    tools:context=".AdminAddProductActivity">
+
+    <ImageView
+        android:id="@+id/imgSelectImgProduct"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_select_product"
+        android:background="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_width="350dp"
+        android:layout_height="390dp"/>
+
+    <EditText
+        android:id="@+id/edtProductName"
+        android:layout_below="@id/imgSelectImgProduct"
+        android:inputType="text"
+        android:layout_marginTop="20dp"
+        android:padding="20dp"
+        android:hint="Tên mặt hàng"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/purple_500"
+        android:textColorHint="@color/purple_500"
+        android:fontFamily="serif"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/input_design"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/edtProductDes"
+        android:layout_below="@id/edtProductName"
+        android:inputType="text"
+        android:layout_marginTop="6dp"
+        android:padding="20dp"
+        android:hint="Mô tả mặt hàng"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:textColor="@color/purple_500"
+        android:textColorHint="@color/purple_500"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/input_design"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/edtProductPrice"
+        android:layout_below="@id/edtProductDes"
+        android:inputType="text"
+        android:layout_marginTop="6dp"
+        android:padding="20dp"
+        android:hint="Giá mặt hàng"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:textColor="@color/purple_500"
+        android:textColorHint="@color/purple_500"
+        android:background="@drawable/input_design"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnAddProduct"
+        android:layout_below="@id/edtProductPrice"
+        android:text="Thêm mặt hàng"
+        android:textSize="20dp"
+        android:fontFamily="serif"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:padding="17dp"
+        android:layout_marginTop="20dp"
+        android:textAllCaps="false"
+        android:textColor="#FFF"
+        android:background="@drawable/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
