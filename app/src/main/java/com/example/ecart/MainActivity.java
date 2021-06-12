@@ -31,14 +31,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // ánh xạ tới view
         btnLoginMain = findViewById(R.id.btnLoginMain);
         btnJoin = findViewById(R.id.btnJoin);
         loadingBar = new ProgressDialog(this);
 
         Paper.init(this);
 
-        // Từ MainActivity: ấn "Đã có..." -> Login Activity
         btnLoginMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Từ MainActivity: ấn "Đăng ký ngay" -> Register Activity
         btnJoin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,11 +53,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // đọc từ Paper phone và password
         String UserPhoneKey = Paper.book().read(Prevalent.UserPhoneKey);
         String UserPasswordKey = Paper.book().read(Prevalent.UserPasswordKey);
 
-        // Kiểm tra nếu phone không rỗng hoặc password không rỗng -> AllowAccess
         if (UserPhoneKey != "" && UserPasswordKey != "") {
             if (!TextUtils.isEmpty(UserPasswordKey) && !TextUtils.isEmpty(UserPasswordKey)) {
                 allowAccess(UserPhoneKey, UserPasswordKey);
@@ -83,8 +78,6 @@ public class MainActivity extends AppCompatActivity {
                 // nếu sđt có tồn tại
                 if (snapshot.child("Users").child(phone).exists()) {
                     Users usersData = snapshot.child("Users").child(phone).getValue(Users.class);
-
-                    // kiểm tra số điện thoại và mật khẩu có giống trong db không
                     if (usersData.getPhone().equals(phone)) {
                         if (usersData.getPassword().equals(password)) {
                             Toast.makeText(MainActivity.this, "Bạn đã đăng nhập!", Toast.LENGTH_SHORT).show();
