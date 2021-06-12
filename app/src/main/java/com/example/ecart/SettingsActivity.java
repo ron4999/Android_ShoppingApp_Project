@@ -51,13 +51,10 @@ public class SettingsActivity extends AppCompatActivity {
 
         storageReference = FirebaseStorage.getInstance().getReference().child("User Images");
 
-        // ánh xạ đến view
         initView();
 
-        // hiển thị thông tin User
         userInfoDisplay(civSettingsProfileImg, edtChangeName, edtChangePhoneNum, edtChangeAddress);
 
-        // thêm sự kiện cho "Đóng"
         txtCloseSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +62,6 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
-        // thêm sự kiện cho "Cập nhật"
         txtUpdateSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,7 +74,6 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
-        // thêm sự kiện cho "Sửa hình ảnh"
         txtChangeImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,7 +122,6 @@ public class SettingsActivity extends AppCompatActivity {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             imageUri = result.getUri();
 
-            // hiện crop ở màn hình civ
             civSettingsProfileImg.setImageURI(imageUri);
         }
         else {
@@ -137,7 +131,6 @@ public class SettingsActivity extends AppCompatActivity {
         }
     }
 
-    // lưu thông tin đã sửa
     private void userInfoSave() {
         if (TextUtils.isEmpty(edtChangeName.getText().toString())) {
             Toast.makeText(this, "Đây là trường bắt buộc", Toast.LENGTH_SHORT).show();
@@ -214,7 +207,6 @@ public class SettingsActivity extends AppCompatActivity {
     private void userInfoDisplay(final CircleImageView civSettingsProfileImg, final EditText edtChangeName, final EditText edtChangePhoneNum, final EditText edtChangeAddress) {
         DatabaseReference UserRef = FirebaseDatabase.getInstance().getReference().child("Users").child(Prevalent.currentOnlineUser.getPhone());
 
-        // thêm giá trị khi sửa
         UserRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
