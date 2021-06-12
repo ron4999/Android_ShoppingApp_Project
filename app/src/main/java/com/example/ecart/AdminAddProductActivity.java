@@ -56,10 +56,8 @@ public class AdminAddProductActivity extends AppCompatActivity {
         // Toast.makeText(this, categoryName, Toast.LENGTH_SHORT).show();
 
         productImgRef = FirebaseStorage.getInstance().getReference().child("Product Images");
-
         productRef = FirebaseDatabase.getInstance().getReference().child("Products");
 
-        // thêm sự kiện khi ấn vào ảnh thêm sản phẩm
         imgSelectImgProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,7 +66,6 @@ public class AdminAddProductActivity extends AppCompatActivity {
             }
         });
 
-        // thêm sự kiện cho nút thêm mặt hàng
         btnAddProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,21 +106,17 @@ public class AdminAddProductActivity extends AppCompatActivity {
 
         Calendar calendar = Calendar.getInstance();
 
-        // định dạng ngày
         SimpleDateFormat currentDate = new SimpleDateFormat("dd-MM-yyyy");
         saveCurrentDate = currentDate.format(calendar.getTime());
 
-        // định dạng giờ
         SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
         saveCurrentTime = currentTime.format(calendar.getTime());
 
         // thêm id ngẫu nhiên cho sản phẩm
         productRandomKey = saveCurrentDate + "_" + saveCurrentTime;
 
-        // thêm link ảnh vào db với id ngẫu nhiên productRandomKey
         StorageReference filePath = productImgRef.child(imageUri.getLastPathSegment() + productRandomKey + ".jpg");
 
-        // upload ảnh
         final UploadTask uploadTask = filePath.putFile(imageUri);
 
         uploadTask.addOnFailureListener(new OnFailureListener() {
@@ -208,7 +201,6 @@ public class AdminAddProductActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        // khi đã chọn ảnh lấy Uri của ảnh
         if (requestCode == galleryPick && resultCode == RESULT_OK && data != null) {
             imageUri = data.getData();
             imgSelectImgProduct.setImageURI(imageUri);
